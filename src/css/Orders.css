@@ -1,0 +1,114 @@
+.title {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+.empty {
+    background-color: beige;
+    width: 20rem;
+    height: 10rem;
+    text-align: center;
+    margin-right: 20px;
+}
+
+.orders__body {
+    width: 20rem;
+    height: 20rem;
+    background-color: #fff;
+    border: 1px solid #333;
+    margin-right: 30px;
+}
+
+.orders__body .item__img {
+    width: 3rem;
+}
+
+.orders__body .item__img img {
+    width: 100%;
+}
+
+.orders__body .item {
+    display: flex;
+    flex-direction: row;
+    width: 89%;
+    height: 20px;
+    background-color: #fff;
+}
+
+.orders__body .item .content {
+    padding-left: 8px;
+}
+
+.orders__body .item .content .title {
+    font-size: 15px;
+    padding-right: 10px;
+    width: 5rem;
+}
+
+.orders__body .item .action .price {
+    font-size: 13px;
+    padding-top: 5px;
+}
+
+.action {
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+    align-items: center;
+    margin-top: 1.4rem;
+    text-align: center;
+}
+
+.btn__plus {
+    margin-left: 12px;
+}
+
+.btn__plus,
+.btn__minus {
+    border: 1px solid #ccc;
+    background-color: #fff;
+    margin-top: 0.6rem;
+    margin-left: 5px;
+}
+
+.btn__remove {
+    height: 2rem;
+    border: none;
+    background-color: #fff;
+    list-style: none;
+    padding: 17px 0 0 30px;
+}
+
+.total {
+    width: 20rem;
+    background-color: #fff;
+    /* align-items: center; */
+    text-align: center;
+    margin-right: 25px;
+}
+
+.total .item {
+    height: 2rem;
+    margin: 0;
+}
+
+.total .item .content {
+    display: flex;
+    justify-content: center;
+}
+
+.total .item .content p {
+    margin: 0;
+}
+
+.removeAllBtn {
+    width: 4rem;
+    height: 1.5rem;
+    margin-left: 8px;
+    font-size: 12px;
+}
+
+.total .btn__order {
+    width: 100%;
+    margin-bottom: 8px;
+}
