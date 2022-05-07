@@ -7,14 +7,16 @@ import './App.css';
 
 function App() {
   return (
-    <AppStateProvider>
+    <>
+    {/*  <AppStateProvider> */}
       <Header />
       <div className="container">
         <Prototypes />
         <Orders />
       </div>
       <Footer />
-    </AppStateProvider>
+    {/* </AppStateProvider> */}
+    </>
   );
 }
 

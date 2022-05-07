@@ -1,9 +1,7 @@
 import '../css/Prototypes.css';
 import { BsFillCartPlusFill } from 'react-icons/bs';
-import { useContext } from 'react';
-import AppStateContext from '../contexts/AppStateContext';
 import { useDispatch, useSelector } from 'react-redux';
-import itemReducer, { addItemToCart } from '../reducer/reducers';
+import { addItemToCart } from '../reducer/reducers';
 
 const Prototypes = () => {
     const items = useSelector(state => state.allItems);

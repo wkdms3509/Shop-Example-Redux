@@ -1,7 +1,3 @@
-import { useCallback, useState } from "react";
-import { combineReducers } from "redux";
-import Orders from "../components/Orders";
-
 export const ADD_ITEM = "ADD_ITEM";
 export const REMOVE_ITEM = 'REMOVE_ITEM';
 export const REMOVE_ALL_ITEM = "REMOVE_ALL_ITEM";
@@ -65,7 +61,6 @@ const initialState = {
 // 액션 생성 함수
 export const addItemToCart = (id) => {
     const findedItem = initialState.allItems.find(item => item.id === id);
-    const orderItem = initialState.myCart.find(order => order.id === id);
 
     // if(orderItem === undefined) {
     //     return {
@@ -118,7 +113,6 @@ export const addItemToCart = (id) => {
         thumnail: findedItem.thumnail,
         url: findedItem.url,
         price: findedItem.price,
-        // quantity: 1,
     }
 }
 
@@ -148,24 +142,16 @@ function itemReducer(state = initialState, action) {
 
     switch(action.type) {
         case ADD_ITEM:
+            const item = state.allItems.find(product => product.id === action.id);
+              
             const cartItem = state.myCart.find(item => item.id === action.id ? true : false);
-            const item = state.allItems.find(  			//선택한 물품
-                (product) => product.id === action.id
-              );
-              // Check if Item is in cart already
-            const inCart = state.myCart.find((item) =>		//카트에 해당물품 검색
-                item.id === action.id ? true : false
-            );
         
               return {
                 ...state,
-                myCart: inCart				//카트에 해당되는 물품 있다면
-                  ? state.myCart.map((item) =>
-                      item.id === action.id
-                        ? { ...item, qty: item.qty + 1 }	//해당물품 수량 +1
-                        : item
-                    )
-                  : [...state.myCart, { ...item, qty: 1 }],	//없다면 카트에 새로추가
+                myCart: cartItem ? state.myCart.map(item => item.id === action.id
+                        ? { ...item, qty: item.qty + 1 }
+                        : item)
+                  : [...state.myCart, { ...item, qty: 1 }],
               };
 
         case REMOVE_ITEM:
